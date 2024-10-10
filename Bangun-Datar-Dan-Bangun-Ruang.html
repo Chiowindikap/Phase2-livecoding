@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hitung Luas, Keliling dan Volume Bangun Ruang</title>
+    <link rel="stylesheet" href="back.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+           background-image: url(download.jpg);
+            margin: 0;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            font-size: 14px;
+            border-bottom: 1px solid #e0e0e0;
+            background-color: #fff;
+        }
+
+        /* Membuat sudut membulat pada baris pertama dan terakhir */
+        th:first-child {
+            border-top-left-radius: 12px;
+        }
+
+        th:last-child {
+            border-top-right-radius: 12px;
+        }
+
+        tr:last-child td:first-child {
+            border-bottom-left-radius: 12px;
+        }
+
+        tr:last-child td:last-child {
+            border-bottom-right-radius: 12px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            color: #555;
+            font-weight: normal;
+        }
+
+        td {
+            color: #333;
+        }
+
+        button {
+            border-radius: 8px;
+            display: block;
+            width: 100%;
+            background-color: #2c7ddb;
+            color: white;
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #1b4d87;
+        }
+
+        input[type="number"] {
+            width: 90%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Hitung Luas, Keliling dan Volume Bangun Ruang</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Jenis Bangun Ruang</th>
+                <th>Diketahui (cm)</th>
+                <th></th>
+                <th>Volume</th>
+                <th>Keliling</th>
+                <th>Luas</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Balok</td>
+                <td>
+                    <input type="number" id="panjangBalok" placeholder="Panjang"><br>
+                    <input type="number" id="lebarBalok" placeholder="Lebar"><br>
+                    <input type="number" id="tinggiBalok" placeholder="Tinggi"><br>
+                </td>
+                <td><button onclick="hitungBalok()">Hitung</button></td>
+                <td id="VolumeBalok"></td>
+                <td id="kelilingBalok"></td>
+                <td id="luasBalok"></td>
+            </tr>
+            <tr>
+                <td>Kubus</td>
+                <td>
+                    <input type="number" id="sisiKubus" placeholder="Sisi"><br>
+                </td>
+                <td><button onclick="hitungKubus()">Hitung</button></td>
+                <td id="VolumeKubus"></td>
+                <td id="kelilingKubus"></td>
+                <td id="luasKubus"></td>
+            </tr>
+            <tr>
+                <td>Prisma</td>
+                <td>
+                    <input type="number" id="alasPrisma" placeholder="Alas"><br>
+                    <input type="number" id="tinggiPrisma" placeholder="Tinggi"><br>
+                </td>
+                <td><button onclick="hitungPrisma()">Hitung</button></td>
+                <td id="VolumePrisma"></td>
+                <td id="kelilingPrisma"></td>
+                <td id="luasPrisma"></td>
+            </tr>
+            <tr>
+                <td>Bola</td>
+                <td>
+                    <input type="number" id="jariBola" placeholder="Jari-jari"><br>
+                </td>
+                <td><button onclick="hitungBola()">Hitung</button></td>
+                <td id="VolumeBola"></td>
+                <td id="kelilingBola"></td>
+                <td id="luasBola"></td>
+            </tr>
+            <tr>
+                <td>Lingkaran</td>
+                <td>
+                    <input type="number" id="jariLingkaran" placeholder="Jari-jari"><br>
+                </td>
+                <td><button onclick="hitungLingkaran()">Hitung</button></td>
+                <td></td>
+                <td id="kelilingLingkaran"></td>
+                <td id="luasLingkaran"></td>
+            </tr>
+            <tr>
+                <td>Persegi Panjang</td>
+                <td>
+                    <input type="number" id="panjangPersegiPanjang" placeholder="Panjang"><br>
+                    <input type="number" id="lebarPersegiPanjang" placeholder="Lebar"><br>
+                </td>
+                <td><button onclick="hitungPersegiPanjang()">Hitung</button></td>
+                <td></td>
+                <td id="kelilingPersegiPanjang"></td>
+                <td id="luasPersegiPanjang"></td>
+            </tr>
+            <tr>
+                <td>Trapesium</td>
+                <td>
+                    <input type="number" id="alasAtas" placeholder="Alas Atas"><br>
+                    <input type="number" id="alasBawah" placeholder="Alas Bawah"><br>
+                    <input type="number" id="tinggiTrapesium" placeholder="Tinggi"><br>
+                </td>
+                <td><button onclick="hitungTrapesium()">Hitung</button></td>
+                <td></td>
+                <td id="kelilingTrapesium"></td>
+                <td id="luasTrapesium"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button class="back" onclick="goBack()">Kembali</button>
+
+</div>
+
+<script src="MATH.js">
+</script>
+
+</body>
+</html>

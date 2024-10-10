@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perhitungan Nilai Akhir Mahasiswa</title>
+    <link rel="stylesheet" href="back.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url(download.jpg);
+            margin: 0;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            font-size: 14px;
+            border-bottom: 1px solid #e0e0e0;
+            background-color: #fff;
+        }
+
+        th:first-child {
+            border-top-left-radius: 12px;
+        }
+
+        th:last-child {
+            border-top-right-radius: 12px;
+        }
+
+        tr:last-child td:first-child {
+            border-bottom-left-radius: 12px;
+        }
+
+        tr:last-child td:last-child {
+            border-bottom-right-radius: 12px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            color: #555;
+            font-weight: normal;
+        }
+
+        td {
+            color: #333;
+        }
+
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        input[type="text"]:focus, input[type="number"]:focus {
+            outline: none;
+            border-color: #4CAF50;
+        }
+
+        button {
+            display: block;
+            width: 50%;
+            margin: 0 auto;
+            background-color: #2c7ddb;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #1b4d87;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tbody tr:hover {
+            background-color: #cbcbcb;
+        }
+
+        @media (max-width: 768px) {
+            input[type="text"], input[type="number"], button {
+                width: 100%;
+            }
+
+            table, th, td {
+                font-size: 13px;
+            }
+
+            th, td {
+                padding: 8px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            table, th, td {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Perhitungan Nilai Akhir Mahasiswa</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nama</th>
+                <th>Nilai UTS</th>
+                <th>Nilai UAS</th>
+                <th>Nilai Akhir</th>
+                <th>Grade</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody id="student-table">
+            <tr>
+                <td><input type="text" id="name1" placeholder="Nama Mahasiswa"></td>
+                <td><input type="number" id="uts1" placeholder="Nilai UTS"></td>
+                <td><input type="number" id="uas1" placeholder="Nilai UAS"></td>
+                <td id="final1">-</td>
+                <td id="grade1">-</td>
+                <td id="status1">-</td>
+            </tr>
+            <tr>
+                <td><input type="text" id="name2" placeholder="Nama Mahasiswa"></td>
+                <td><input type="number" id="uts2" placeholder="Nilai UTS"></td>
+                <td><input type="number" id="uas2" placeholder="Nilai UAS"></td>
+                <td id="final2">-</td>
+                <td id="grade2">-</td>
+                <td id="status2">-</td>
+            </tr>
+            <tr>
+                <td><input type="text" id="name3" placeholder="Nama Mahasiswa"></td>
+                <td><input type="number" id="uts3" placeholder="Nilai UTS"></td>
+                <td><input type="number" id="uas3" placeholder="Nilai UAS"></td>
+                <td id="final3">-</td>
+                <td id="grade3">-</td>
+                <td id="status3">-</td>
+            </tr>
+            <tr>
+                <td><input type="text" id="name4" placeholder="Nama Mahasiswa"></td>
+                <td><input type="number" id="uts4" placeholder="Nilai UTS"></td>
+                <td><input type="number" id="uas4" placeholder="Nilai UAS"></td>
+                <td id="final4">-</td>
+                <td id="grade4">-</td>
+                <td id="status4">-</td>
+            </tr>
+            <tr>
+                <td><input type="text" id="name5" placeholder="Nama Mahasiswa"></td>
+                <td><input type="number" id="uts5" placeholder="Nilai UTS"></td>
+                <td><input type="number" id="uas5" placeholder="Nilai UAS"></td>
+                <td id="final5">-</td>
+                <td id="grade5">-</td>
+                <td id="status5">-</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button onclick="calculateGrades()">Hitung Nilai</button>
+
+    <button class="back" onclick="goBack()">Kembali</button>
+
+</div>
+
+<script src="MATH.js"></script>
+
+</body>
+</html>

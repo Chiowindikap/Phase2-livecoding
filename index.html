@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Live Coding</title>
+    <link rel="stylesheet" href="tampilan.css">
+    <link rel="stylesheet" href="popup.css">
+    <style>
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Penyelesaian</h1>
+        <button class="button" onclick="window.location.href='Bangun-Datar-Dan-Bangun-Ruang.html'">Bangun Datar<br>Bangun Ruang</button>
+        <button class="button" onclick="window.location.href='nilai-mahasiswa.html'">Nilai<br>Mahasiswa</button>
+    </div>
+    <div class="materi">
+        <h2>Materi Live coding</h2>
+        <h3>Soal</h3>
+        <p>Bangun Datar & Bangun Ruang</p>
+        <img src="soal (1).jpg" alt="Bangun-Datar-Dan-Bangun-Ruang" class="thumbnail">
+        <p>Nilai Mahasiswa</p>
+        <img src="soal (2).jpg" alt="Nilai-Mahasiswa" class="thumbnail">
+
+    </div>
+
+    <div id="imageModal">
+        <img src="" id="modalImage" alt="Popup Image">
+    </div>
+    <script>
+        var imageModal = document.getElementById('imageModal');
+        var modalImage = document.getElementById('modalImage');
+        var thumbnails = document.querySelectorAll('.thumbnail');
+
+
+        thumbnails.forEach(function(thumbnail) {
+            thumbnail.addEventListener('click', function() {
+                modalImage.src = thumbnail.src;
+                imageModal.style.display = 'flex';
+            });
+        });
+
+        imageModal.addEventListener('click', function() {
+            imageModal.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
